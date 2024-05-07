@@ -1,3 +1,7 @@
+#startButton {
+  float: left;
+}
+
 #count {
   font-weight: bold;
   float: right;
