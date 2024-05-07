@@ -12,6 +12,8 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  color: #E0354B; /* added color */
+  font-weight: bold; /* added bold */
   padding: 20px;
 }
 
