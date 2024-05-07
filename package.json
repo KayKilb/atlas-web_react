@@ -1,13 +1,1 @@
-{
-  "name": "atlas-web_react",
-  "version": "1.0.0",
-  "description": "React Repository",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    "build": "webpack"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
-}
+{}
