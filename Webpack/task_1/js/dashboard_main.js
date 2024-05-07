@@ -15,4 +15,4 @@ const updateCounter = () => {
 };
 
 const debounceCounter = debounce(updateCounter, 500);
-button.click(debounceCounter);
+button.on('click', debounceCounter);
