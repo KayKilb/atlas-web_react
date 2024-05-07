@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode=production"
+    "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kaylene Kilbourn",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.7.3",
