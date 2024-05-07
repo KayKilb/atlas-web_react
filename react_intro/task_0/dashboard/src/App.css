@@ -38,13 +38,14 @@
   border-top: 3px solid #E0354B;
   border-bottom: 3px solid #E0354B;
   padding: 20px;
-  margin: 20px 0;
+  margin: 80px 0;
   text-align: left;
 }
 
 .App-footer {
   font-size: 0.8em;
-  color: #E0354B;
+  color: black;
+  font-style: italic;
   margin-top: 20px;
   padding: 20px;
 }
