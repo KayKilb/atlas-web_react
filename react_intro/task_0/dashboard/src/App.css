@@ -1,48 +1,51 @@
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 .App-header {
   background-color: #ffffff;
-  min-height: 100vh;
+  min-height: 20vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 20px;
   max-width: 800px;
-  position: relative;
+  margin: 0 auto;
 }
 
 .App-logo {
-  height: 20vmin;
+  height: 10vmin;
   pointer-events: none;
-  margin-right: 515px;
+  margin-right: 20px;
 }
 
 .App-title {
-  font-size: 1.5em; /* Adjusted font size */
-  color: #E0354B; /* Red font color */
+  font-size: 2em;
+  color: #E0354B;
   font-weight: bold;
-  position: absolute;
-  top: 20px; /* Adjusted top position */
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.App-link {
-  color: #61dafb;
+  margin: 0;
 }
 
 .App-body {
-  border-top: 2px solid #E0354B;
+  border-top: 3px solid #E0354B;
+  border-bottom: 3px solid #E0354B;
   padding: 20px;
-  margin-top: 80px; /* Increased margin-top */
-  margin-left: 20px;
+  max-width: 800px;
+  margin: 20px auto;
   text-align: left;
 }
 
 .App-footer {
-  border-top: 2px solid #E0354B;
-  margin-top: 300px;
+  font-size: 0.8em;
+  color: #E0354B;
+  margin-top: 20px;
   padding: 20px;
+}
+
+.App-slogan {
+  font-size: 0.8em;
+  color: #E0354B;
+  margin-top: 10px;
 }
