@@ -35,12 +35,10 @@
 }
 
 .App-body {
-  .App-body {
-    border-top: 3px solid #E0354B;
-    border-bottom: 3px solid #E0354B;
-    padding: 25px 20px; /* Updated padding */
-    margin: 20px 0;
-    text-align: left;
+  border-top: 3px solid #E0354B;
+  padding: 25px 20px; /* Updated padding */
+  margin: 20px 0;
+  text-align: left;
 }
 
 .App-footer {
