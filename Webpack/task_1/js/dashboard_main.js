@@ -8,7 +8,7 @@ let count = 0;
 const updateCounter = _.debounce(function () {
     count += 1;
     $('#count').text(`${count} clicks on the button`);
-}, 1000, {
+}, 500, {
     'leading': true,
     'trailing': false
 });
