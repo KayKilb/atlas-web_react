@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .App-header {
@@ -11,8 +13,6 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .App-logo {
@@ -38,8 +38,7 @@
   border-top: 3px solid #E0354B;
   border-bottom: 3px solid #E0354B;
   padding: 20px;
-  max-width: 800px;
-  margin: 20px auto;
+  margin: 20px 0;
   text-align: left;
 }
 
