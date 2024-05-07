@@ -10,7 +10,7 @@
   align-items: center;
   padding: 20px;
   max-width: 800px;
-  position: relative; /* Added */
+  position: relative;
 }
 
 .App-logo {
@@ -20,13 +20,13 @@
 }
 
 .App-title {
-  font-size: calc(10px + 2vmin);
-  color: #E0354B;
+  font-size: 1.5em; /* Adjusted font size */
+  color: #E0354B; /* Red font color */
   font-weight: bold;
-  position: absolute; /* Added */
-  top: 0; /* Added */
-  left: 50%; /* Added */
-  transform: translateX(-50%); /* Added */
+  position: absolute;
+  top: 20px; /* Adjusted top position */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .App-link {
@@ -36,7 +36,7 @@
 .App-body {
   border-top: 2px solid #E0354B;
   padding: 20px;
-  margin-top: 20px; /* Changed from -575px */
+  margin-top: 80px; /* Increased margin-top */
   margin-left: 20px;
   text-align: left;
 }
