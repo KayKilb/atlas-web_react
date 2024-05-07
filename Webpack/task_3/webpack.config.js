@@ -1,43 +1,65 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-    entry: {
-        header: path.resolve(__dirname, './task_3/modules/header/header.js'),
-        body: path.resolve(__dirname, './task_3/modules/body/body.js'),
-        footer: path.resolve(__dirname, './task_3/modules/footer/footer.js'),
-    },
-    output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'public'),
-    },
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+  mode: 'development',
+  entry: {
+    header: './modules/header/header.js',
+    body: './modules/body/body.js',
+    footer: './modules/footer/footer.js',
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'public'),
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    static: path.join(__dirname, 'public'),
+    port: 8564,
+  },
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new CleanWebpackPlugin(),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(jpg|png|gif|svg)$/,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.90],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75,
+              },
             },
+          },
         ],
-    },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, './public/index.html'),
-            inject: 'body',
-            chunks: ['header', 'body', 'footer'],
-            filename: 'index.html',
-        }),
+      },
     ],
-    devtool: 'inline-source-map',
-    devServer: {
-        contentBase: path.resolve(__dirname, 'public'),
-        port: 8564,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
     },
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-        },
-    },
+  },
 };
