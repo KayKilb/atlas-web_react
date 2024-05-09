@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js', // Entry point for your application
+  entry: path.resolve(__dirname, '../src/index.js'), // Entry point for your application
 
   // Output configuration
   output: {
