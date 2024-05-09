@@ -1,28 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development', // Set mode to development
-
-  entry: path.resolve(__dirname, '../src/index.js'), // Entry point for your application
-
-  // Output configuration
+  entry: './src/index.js', // Entry point for your application
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../dist'), // Output directory for all the assets
+    path: path.resolve(__dirname, 'dist'), // Output directory for all the assets
+    publicPath: '/', // Public path to serve assets
   },
-
-  // Development server configuration
   devServer: {
-    contentBase: path.join(__dirname, '../dist'),
-    hot: true,
+    contentBase: './dist', // Serve content from the dist directory
+    hot: true, // Enable hot module replacement
   },
-
-  // Source maps configuration for better debugging
-  devtool: 'inline-source-map',
-
-  // Module rules for handling different file types
+  devtool: 'inline-source-map', // inline source map for better debugging
   module: {
     rules: [
       {
@@ -31,49 +22,26 @@ module.exports = {
         use: {
           loader: 'babel-loader', // Use Babel for transpiling JavaScript files
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'], // Presets for modern JavaScript and React
-          },
+            presets: ['@babel/preset-env', '@babel/preset-react'] // Presets for modern JavaScript and React
+          }
         },
       },
       {
         test: /\.css$/, // Handle CSS files
-        use: ['style-loader', 'css-loader'],
+        use: [
+          'style-loader', // Injects CSS into the DOM via a <style> tag
+          'css-loader', // Resolves import and url() in CSS files
+        ],
       },
       {
-        test: /\.(jpg|png|gif|svg)$/, // Handle image files
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader', // Optimize images
-            options: {
-              mozjpeg: {
-                progressive: true,
-              },
-              optipng: {
-                enabled: false,
-              },
-              pngquant: {
-                quality: [0.65, 0.90],
-                speed: 4,
-              },
-              gifsicle: {
-                interlaced: false,
-              },
-              webp: {
-                quality: 75,
-              },
-            },
-          },
-        ],
+        test: /\.(png|svg|jpg|jpeg|gif)$/i, // Handle image files
+        type: 'asset/resource',
       },
     ],
   },
-
-  // Plugins configuration
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../dist/index.html'),
+      template: 'src/index.html', // Use index.html in src as template
     }),
-    new CleanWebpackPlugin(),
   ],
 };
