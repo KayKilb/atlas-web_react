@@ -4,18 +4,18 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: path.resolve(__dirname, '../src/index.js'), // Updated this line
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, '../dist'), // Updated this line
   },
   devServer: {
-    contentBase: path.join(__dirname, '../dist'),
+    contentBase: path.join(__dirname, '../dist'), // Updated this line
     hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './dist/index.html',
+      template: path.resolve(__dirname, '../dist/index.html'), // Updated this line
     }),
     new CleanWebpackPlugin(),
   ],
