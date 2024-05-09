@@ -41,7 +41,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html', // Use index.html in src as template
+      template: './src/index.html', // Specify the path to index.html
     }),
   ],
 };
