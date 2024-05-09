@@ -1,0 +1,53 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left; /* Updated to left */
+  color: #E0354B; /* added color */
+  font-weight: bold; /* added bold */
+  padding: 20px;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+  margin-right: 20px;
+}
+
+.App-title {
+  font-size: 2em;
+  color: #E0354B;
+  font-weight: bold;
+  margin: 0;
+}
+
+.App-slogan {
+  font-size: 0.8em;
+  color: #E0354B;
+  margin-top: 10px;
+}
+
+.App-body {
+  border-top: 3px solid #E0354B;
+  padding: 25px 20px; /* Updated padding */
+  margin: 20px 0;
+  text-align: left;
+}
+
+.App-footer {
+  border-top: 2px solid #E0354B;
+  margin-top: 300px;
+  padding: 20px;
+  font-size: 0.8em;
+  color: black;
+  font-style: italic;
+}
