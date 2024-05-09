@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development', // Set mode to development
-  entry: '../src/index.js', // Entry point for your application
+  entry: path.resolve(__dirname, '../src/index.js'), // Entry point for your application
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'), // Output directory for all the assets
