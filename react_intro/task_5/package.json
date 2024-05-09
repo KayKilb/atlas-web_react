@@ -12,18 +12,19 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^1.0.6"
+    "@babel/plugin-proposal-private-property-in-object": "^1.0.6",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -48,4 +49,4 @@
   "keywords": [],
   "author": "Kaylene Kilbourn",
   "license": "ISC"
-}
+}}
