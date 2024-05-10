@@ -1,47 +1,74 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  mode: 'development', // Set mode to development
-  entry: path.resolve(__dirname, '../src/index.js'), // Entry point for your application
+  mode: "production",
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'), // Output directory for all the assets
-    publicPath: '/', // Public path to serve assets
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/",
   },
-  devServer: {
-    contentBase: './dist', // Serve content from the dist directory
-    hot: true, // Enable hot module replacement
-  },
-  devtool: 'inline-source-map', // inline source map for better debugging
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/, // Handle both JavaScript and JSX files
-        exclude: /node_modules/, // Ignore node_modules directory
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader', // Use Babel for transpiling JavaScript files
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'] // Presets for modern JavaScript and React
-          }
+            presets: ["@babel/preset-env", "@babel/preset-react"],
+          },
         },
       },
       {
-        test: /\.css$/, // Handle CSS files
-        use: [
-          'style-loader', // Injects CSS into the DOM via a <style> tag
-          'css-loader', // Resolves import and url() in CSS files
-        ],
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i, // Handle image files
-        type: 'asset/resource',
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "images",
+            },
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              optipng: {
+                enabled: false,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
+              gifsicle: {
+                interlaced: false,
+              },
+              webp: {
+                quality: 75,
+              },
+            },
+          },
+        ],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html', // Specify the path to index.html
+      template: "./src/index.template.html",
+      inject: "body",
+      filename: "index.html",
     }),
+    new CleanWebpackPlugin(),
   ],
+  devtool: "source-map",
 };
