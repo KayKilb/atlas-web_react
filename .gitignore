@@ -1,1 +1,20 @@
+# Node.js files
 node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# IDE files
+.vscode/
+.idea/
+
+# Compiled output
+build/
+out/
+
+# Logs and test coverage
+*.log
+coverage/
+
+# Environment variables
+.env
