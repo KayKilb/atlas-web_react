@@ -4,10 +4,10 @@
   position: relative;
 }
 
-li[data-priority="default"] {
-  color: blue;
+li {
+  color: blue; /* Default color */
 }
 
 li[data-priority="urgent"] {
-  color: red;
+  color: red; /* Urgent color */
 }
