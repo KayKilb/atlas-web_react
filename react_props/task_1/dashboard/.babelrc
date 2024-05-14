@@ -1,7 +1,17 @@
-{
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
-  }
-  
+module.exports = {
+  "moduleNameMapper": {
+    "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+  },
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
+  },
+  "babelrc": false, // Ensure Jest doesn't use the project's .babelrc
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-transform-runtime"
+  ]
+};
