@@ -1,7 +1,7 @@
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import { shallow } from 'enzyme';
 import Header from './Header';
-import { expect } from '@testing-library/jest-dom';
 
 describe('Header Component', () => {
   it('should render without crashing', () => {

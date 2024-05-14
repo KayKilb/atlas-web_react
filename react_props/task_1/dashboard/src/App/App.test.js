@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
@@ -5,7 +6,6 @@ import Notifications from '../Notifications/Notifications';
 import Header from '../Header/Header';
 import Login from '../Login/Login';
 import Footer from '../Footer/Footer';
-import { expect } from '@testing-library/jest-dom';
 
 describe('App Component', () => {
   it('should contain the Notifications component', () => {

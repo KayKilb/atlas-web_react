@@ -1,7 +1,7 @@
+import '@testing-library/jest-dom/extend-expect';
 import React from "react";
 import { shallow } from "enzyme";
 import Notifications from "./Notifications";
-import { expect } from '@testing-library/jest-dom';
 
 describe("Notifications Component", () => {
   // Test that Notifications renders without crashing
