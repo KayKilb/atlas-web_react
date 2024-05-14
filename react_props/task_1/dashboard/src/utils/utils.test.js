@@ -1,27 +1,28 @@
-import '@testing-library/jest-dom/extend-expect';
 import { getFullYear, getFooterCopy, getLatestNotification } from "./utils";
 
-describe("Utility Functions", () => {
-  // Test getFullYear function
-  test("getFullYear function returns the current year", () => {
+describe("getFullYear function", () => {
+  test("returns the correct year", () => {
     const currentYear = new Date().getFullYear();
-    expect(getFullYear()).toEqual(currentYear);
+    expect(getFullYear()).toBe(currentYear);
+  });
+});
+
+describe("getFooterCopy function", () => {
+  test("returns the correct string when isIndex is true", () => {
+    const result = getFooterCopy(true);
+    expect(result).toBe("Holberton School");
   });
 
-  // Test getFooterCopy function for index page
-  test("getFooterCopy function returns correct text for index page", () => {
-    expect(getFooterCopy(true)).toEqual("Holberton School");
+  test("returns the correct string when isIndex is false", () => {
+    const result = getFooterCopy(false);
+    expect(result).toBe("Holberton School main dashboard");
   });
+});
 
-  // Test getFooterCopy function for non-index page
-  test("getFooterCopy function returns correct text for non-index page", () => {
-    expect(getFooterCopy(false)).toEqual("Holberton School main dashboard");
-  });
-
-  // Test getLatestNotification function
-  test("getLatestNotification function returns the correct notification", () => {
-    const expectedNotification =
+describe("getLatestNotification function", () => {
+  test("returns the correct string", () => {
+    const notificationString =
       "<strong>Urgent requirement</strong> - complete by EOD";
-    expect(getLatestNotification()).toEqual(expectedNotification);
+    expect(getLatestNotification()).toBe(notificationString);
   });
 });
