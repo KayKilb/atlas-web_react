@@ -47,7 +47,7 @@
       "\\.(jpg|jpeg|png|gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     },
     "setupFiles": [
-      "<rootDir>/src/setupTests.js"
+      "<rootDir>/config/setupTests.js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
