@@ -36,5 +36,19 @@
     "dependencies": {
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
-    }
+    },
+    "jest": {
+        "moduleNameMapper": {
+          ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+          "\\.(css|less)$": "identity-obj-proxy",
+          "\\.(css|sass)$": "<rootDir>/__mocks__/styleMock.js",
+          "\\.(jpg|jpeg|png|gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+        },
+        "setupFiles": [
+          "<rootDir>/config/setupTests.js"
+        ],
+        "snapshotSerializers": [
+          "enzyme-to-json/serializer"
+        ]
+      }
 }
