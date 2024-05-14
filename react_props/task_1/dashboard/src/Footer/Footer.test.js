@@ -1,7 +1,6 @@
-import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import { shallow } from 'enzyme';
-import Footer from './Footer';
+import Footer from '../Footer/Footer';
 
 describe('Footer Component', () => {
   it('should render without crashing', () => {
