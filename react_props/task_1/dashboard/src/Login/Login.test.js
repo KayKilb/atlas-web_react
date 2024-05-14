@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Login from './Login';
+import { expect } from '@testing-library/jest-dom';
 
 describe('Login Component', () => {
   it('should render without crashing', () => {

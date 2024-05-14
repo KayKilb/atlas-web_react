@@ -1,4 +1,5 @@
 import { getFullYear, getFooterCopy, getLatestNotification } from "./utils";
+import { expect } from '@testing-library/jest-dom';
 
 describe("Utility Functions", () => {
   // Test getFullYear function
